@@ -1,0 +1,77 @@
+商城 node.js + koa
+UI界面 vue FE
+KOA web框架 BE后端
+
+数据库 DBA
+schema 具象化
+http://mygardensite.org/products/4c4b1476238d3b4dd5003981
+koa提供一个路由route 一切皆资源
+关系型数据库
+NOSQL json文档类型数据库 mongodb（支持js做任何查询）
+{
+    _id: ObjectId("4c4b1476238d3b4dd5003981"),
+    name: 'wheelbarrow-9092',
+    slug: 'wheelbarrow-9092'  slug让url更具语义化 http://mygardensite.org/products/wheelbarrow-9092
+    sku: '9092',
+    description: 'Heavy duty wheelbarrow',
+    details: {
+        weight: 47,
+        weight_units: "lbs",
+        model_num: 4039283402,
+        manufacturer: "Acme",
+        color: "Green"
+    },
+    total_reviews: 4, 好评度
+    average_review: 4.5,
+    pricing: {
+        retial: 589700,
+        sale: 489700
+    },
+    818 新的价格 它的有效期就在那一天
+    price_discount: {
+        retial: 529700,
+        sale: 429700,
+        start: new Date(2017,8,18, 00:00:00),
+        end: new Date(2017,8,18, 23:59:59)
+    },
+    primary_category: ObjectId("6a5b1476238d3b4dd5000048"),
+    category_ids: {
+        ObjectId("6a5b1476238d3b4dd5000048"),
+        ObjectId("6a5b1476238d3b4dd5000048")
+    },
+    类别模糊搜索
+    tags: ["tools", "gardening", "soil"];
+}
+
+下单
+{
+    _id: ObjectId(),
+    user_id: ObjectId(),
+    state: 'CART|PAYED|ARRIVED|CLOSED',
+    line-items: [
+        商品
+        {
+            _id: ObjectId(),
+            details: {
+                color: 'red',
+                storage: '64g'
+            },
+            查询的效率
+            name: 'iphone6s plus..',
+            pic: '图片地址',
+            sku: '9002', 分类
+            quantity: 1,
+            pricing: {
+                retail: 5897,
+                sale: 4897
+            }
+        }
+    ],
+    shipping_address: {
+        street: "588 5th Street",
+        city: "nanchang",
+        state: "JX",
+        zip: 330000
+    },
+    sub_total 6196
+}
